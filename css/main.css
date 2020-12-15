@@ -25,6 +25,9 @@ html ::-webkit-scrollbar-thumb:hover {
 body {
   overflow-x: hidden;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0); }
+  @media only screen and (max-width: 900px) {
+    body {
+      cursor: pointer; } }
 
 a {
   text-decoration: none; }
@@ -744,7 +747,7 @@ button {
     .slide__content-author h3 {
       font-size: 12px; } }
 
-.team__content-groupDetail .icon {
+.team__content-groupDetail .icons {
   width: 40px;
   height: 40px;
   font-size: 20px;
@@ -754,7 +757,7 @@ button {
   transition: all ease-in-out 0.2s;
   cursor: pointer;
   background-color: #fce38a; }
-  .team__content-groupDetail .icon:hover {
+  .team__content-groupDetail .icons.show {
     background-color: #f38181;
     color: #ffffff; }
 .team__content-imgText {
@@ -858,6 +861,7 @@ button {
   top: 0;
   opacity: 0;
   visibility: hidden;
+  cursor: pointer;
   transition: all ease-in-out 0.2s;
   left: 0; }
   .modal__img {

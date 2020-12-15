@@ -18,7 +18,7 @@
         }
         &-groupDetail{
             @extend .story__content-groupDetail;
-            .icon{
+            .icons{
                 width: 40px;
                 height: 40px;
                 @include fontStyle(20px,$red,normal);
@@ -26,7 +26,7 @@
                 transition: all ease-in-out 0.2s;
                 cursor: pointer;
                 background-color: #fce38a;
-                &:hover{
+                &.show{
                     background-color: $red;
                     color: $white;
                 }

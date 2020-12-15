@@ -13,6 +13,7 @@ let img = document.querySelectorAll('.img')
 let modalContent = document.querySelector('.modal__content')
 let modalWrap = document.querySelector('.modal')
 let body = document.querySelector('body')
+let iconS = document.querySelectorAll('.icons')
 //------------------------------------slide default--------------------------
 
 let slideIndex = 0
@@ -165,5 +166,14 @@ let main = {
         })
     },
 }
+
+iconS.forEach(icon=>{
+    icon.addEventListener("click",()=>{
+        iconS.forEach(icon=>{
+            icon.classList.remove('show')
+        })
+        icon.classList.add('show')
+    })
+})
 
 main.init()
