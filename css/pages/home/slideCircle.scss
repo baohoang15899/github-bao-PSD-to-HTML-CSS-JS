@@ -1,0 +1,104 @@
+.slideCircle{
+    position: relative;
+    margin-bottom: 80px;
+    &__content{
+        &-next{
+            cursor: pointer;
+            font-size: 18px;
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateX(-50%);
+        }
+        &-back{
+            cursor: pointer;
+            font-size: 18px;
+            position: absolute;
+            left: 10%;
+            top: 50%;
+            transform: translateX(-50%);
+        }
+        &-img{
+            margin-right: 20px;
+            img{
+                width: 150px;
+                height: 150px;
+            }
+        }
+        &-group{
+            max-width: 786px;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            display: none;
+            animation-name: show;
+            animation-duration: 0.5s;
+            @keyframes show {
+                from{opacity: 0.4;}
+                to{opacity: 1; }
+            }
+            &.show{
+                display: block;
+            }
+        }
+        &-text{
+            font-family: $fontMont;
+            @include fontStyle(14px,$grey,italic);
+        }
+        &-author{
+            display: flex;
+            margin-top: 5px;
+            align-items: center;
+            .line{
+                background-color:$red;
+                height: 3px;
+                width: 44px;
+                margin-right: 10px;
+            }
+            h3{
+                font-family: $fontKau;
+                @include fontStyle(16px,$black,normal);
+            }
+        }
+    }
+    @include max-breakpoint(1000){
+        &__content{
+            &-group{
+                max-width: 500px;
+            }
+        }
+    }
+    @include max-breakpoint(686){
+        &__content{
+            &-group{
+                max-width: 300px;
+            }
+            &-img{
+                img{
+                    width: 70px;
+                    height: 70px;
+                }
+            }
+            &-text{
+                font-family: $fontMont;
+                @include fontStyle(10px,$grey,italic);
+            }
+        }
+    }
+    @include max-breakpoint(441){
+        &__content{
+            &-group{
+                max-width: 65vw;
+            }
+            &-text{
+                font-family: $fontMont;
+                @include fontStyle(10px,$grey,italic);
+            }
+            &-author{
+                h3{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

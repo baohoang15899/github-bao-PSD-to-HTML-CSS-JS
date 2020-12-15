@@ -1,0 +1,51 @@
+.counter{
+    background-color: $green;
+    &__content{
+        &-group{
+            text-align: center;
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+        }
+        &-detail{
+            border-right:1px solid #b9f8ed ;
+            padding: 20px;
+            border-left: 1px solid #b9f8ed;
+            h3{
+                font-family: $fontMont;
+                @include fontStyle(72px,$white,normal);
+            }
+            p{
+                font-family: $fontMont;
+                @include fontStyle(14px,$white,normal);
+                text-transform: uppercase;
+            }
+        }
+        @include max-breakpoint(1000){
+            &-detail{
+                h3{
+                    @include fontStyle(42px,$white,normal);
+                }
+                p{
+                    @include fontStyle(14px,$white,normal);
+                }
+            }
+        }
+        @include max-breakpoint(800){
+            &-group{
+                grid-template-columns: 1fr;
+            }
+            &-detail{
+                border-right:initial ;
+                padding: 20px;
+                border-bottom: 1px solid #b9f8ed ;
+                border-left: initial;
+                h3{
+                    @include fontStyle(42px,$white,normal);
+                }
+                p{
+                    @include fontStyle(14px,$white,normal);
+                }
+            }
+        }
+    }
+}

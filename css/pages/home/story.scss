@@ -1,0 +1,99 @@
+.story{
+    &__content{
+        @include flexColCenter;
+        padding-top: 78px;
+        text-align: center;
+        padding-bottom: 78px;
+        &-title{
+            @include fontStyle(20px,$black,normal);
+            font-family: $fontKau;
+            margin-bottom: 15px;
+        }
+        &-subTitle{
+            @include fontStyle(25px,$black,normal);
+            font-family: $fontMont;
+            text-transform: uppercase;
+        }
+        &-line{
+            background-color:$red;
+            height: 3px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            width: 64px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &-description{
+            @include fontStyle(14px,$grey,normal);
+            font-family: $fontMont;
+            margin-bottom: 60px;
+        }
+        &-group{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            column-gap: 20px;
+            position: relative;
+        }
+        &-groupDetail{
+            position: relative;
+            cursor: pointer;
+            transition: all ease-in-out 0.2s;
+            z-index: 0;
+            &:hover{
+                background-color: $green;
+            }
+            &:hover::after{
+                opacity: 1;
+                visibility: visible;
+            }
+            &:hover .story__content-imgText{
+                opacity: 1;
+                visibility: visible;
+            }
+            &:hover .story__content-img{
+                transform: translate(-10px , -10px);
+            }
+            &:hover .story__content-img::after{
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+        &-img{
+            position: relative;
+            transition: all ease-in-out 0.2s;
+            &::after{
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background-color: rgba($color: rgb(54, 54, 54), $alpha: 0.8);
+                opacity: 0;
+                transition: all ease-in-out 0.2s;
+                visibility: hidden;
+            }
+        }
+        &-imgText{
+            transition: all ease-in-out 0.2s;
+            color: $white;
+            z-index: 10;
+            opacity: 0;
+            visibility: hidden;
+            @include positionCenter;
+            p{
+                text-transform: uppercase;
+                margin-top: 5px;
+                font-family: $fontMont;
+                @include fontStyle(14px,$white,normal);
+            }
+        }
+        @include max-breakpoint(1034){
+            &-group{
+                grid-template-columns: 1fr;
+                column-gap: initial;
+                row-gap: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,80 @@
+.blog{
+    &__content{
+        @extend .story__content;
+        &-title{
+            @extend .story__content-title;
+        }
+        &-line{
+            @extend .story__content-line;
+        }
+        &-subTitle{
+            @extend .story__content-subTitle;
+        }
+        &-group{
+            @extend .story__content-group;
+        }
+        &-img{
+            position: relative;
+            .calendar{
+                position: absolute;
+                background-color: $green;
+                // width: 42px;
+                // height: 48px;
+                padding: 5px;
+                bottom: 8px;
+                left: -10px;
+                h3{
+                    font-family: $fontMont;
+                    font-weight: bold;
+                    @include fontStyle(30px,$white,normal);
+                }
+                p{
+                    font-family: $fontMont;
+                    @include fontStyle(12px,$white,italic);
+                }
+            }
+        }
+        &-text{
+            margin-top: 13px;
+            text-align: left;
+            h3{
+                font-family: $fontMont;
+                @include fontStyle(14px,$black,normal);
+                text-transform: uppercase;
+            }
+            p{
+                margin-top: 15px;
+                font-family: $fontMont;
+                line-height: 20px;
+                @include fontStyle(14px,$black,normal);
+            }
+            .comment{
+                display: flex;
+                align-items: center;
+                @include fontStyle(14px,$grey,italic);
+                .seen{
+                    span:nth-child(1){
+                        margin-right: 8px;
+                    }
+                    display: flex;
+                    align-items: center;
+                }
+                .chat{
+                    span:nth-child(1){
+                        margin-right: 8px;
+                    }
+                    margin-left: 20px;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+        &-textline{
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            height: 1px;
+            background-color: $light;
+        }
+    }
+}

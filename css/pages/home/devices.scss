@@ -1,0 +1,47 @@
+.devices{
+    background-image: url(../img/BG.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &__content{
+        padding-bottom: 0;
+        @extend .story__content;
+        &-title{
+            @extend .story__content-title;
+        }
+        &-subTitle{
+            @extend .story__content-subTitle;
+        }
+        &-line{
+            @extend .story__content-line;
+        }
+        &-group{
+            padding-right: 20px;
+            padding-left: 20px;
+            height: 100%;
+            position: relative;
+            img{
+                max-width:485px;
+                margin: auto;
+            }
+        }
+        &-iphone{
+            position: absolute;
+            right: 0px;
+            bottom: -50px;
+            img{
+                max-width: 200px;
+            }
+            @include max-breakpoint(469){
+                img{
+                    max-width: 150px;
+                }
+            }
+            @include max-breakpoint(365){
+                img{
+                    max-width: 100px;
+                }
+            }
+        }
+    }
+}

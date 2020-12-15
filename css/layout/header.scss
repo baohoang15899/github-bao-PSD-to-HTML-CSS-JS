@@ -1,0 +1,123 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    max-width: 1920px;
+    margin: auto;
+    z-index: 999;
+    padding-top: 24px;
+    transition: all ease-in-out 0.4s;
+    padding-bottom: 24px;
+    &__content{
+        display: flex;
+        align-items: center;
+        transition: all ease-in-out 0.4s;
+        justify-content: space-between;
+        &-mobile{
+            display: none;
+            @include fontStyle(18px,$white,normal);
+        }
+        &-logo{
+            font-family: $fontMont;
+            font-weight: 600;
+            @include fontStyle(30px,$white,normal);
+        }
+        &-menu{
+            font-family: $fontMont;
+            font-weight: 500;
+            text-transform: uppercase;
+            display: flex;
+        }
+        &-link{
+            @include fontStyle(14px,$white,normal);
+        }
+        &-item{
+            span{
+                position: relative;
+                transition: all ease-in-out 0.2s;
+                &::after{
+                    transition: all ease-in-out 0.2s;
+                    position: absolute;
+                    content: "";
+                    background-color: $line;
+                    width: 0;
+                    height: 3px;
+                    bottom: -7px;
+                    left: 0;
+                }
+            }
+            &:nth-child(2){
+                margin-left: 55px;
+            }
+            &:nth-child(3){
+                margin-left: 55px;
+            }
+            &:nth-child(4){
+                margin-left: 55px;
+            }
+            &:nth-child(5){
+                margin-left: 55px;
+            }
+            &:nth-child(6){
+                margin-left: 55px;
+            }
+            &:nth-child(7){
+                margin-left: 55px;
+            }
+            &:hover span{
+                color: $hover;
+            }
+            &:hover span::after{
+                width: 100%;
+            }
+        }
+    }
+    @include max-breakpoint(1034){
+        background-color: $black;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        &__content{
+            flex-wrap: wrap;
+            &-mobile{
+                display: block;
+            }
+            &-menu{
+                max-height: 0vh;
+                overflow: hidden;
+                flex-direction: column;
+                flex-basis: 100%;
+                transition: all ease-in-out 0.4s;
+                &.show{
+                    max-height: 100vh;
+                }
+            }
+            &-item{
+                padding-top: 15px;
+                &:nth-child(2){
+                    margin-left: initial;
+                }
+                &:nth-child(3){
+                    margin-left: initial;
+                }
+                &:nth-child(4){
+                    margin-left: initial;
+                }
+                &:nth-child(5){
+                    margin-left: initial;
+                }
+                &:nth-child(6){
+                    margin-left: initial;
+                }
+                &:nth-child(7){
+                    margin-left: initial;
+                }
+            }
+        }
+    }
+    &.show{
+        background-color: $black;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+}

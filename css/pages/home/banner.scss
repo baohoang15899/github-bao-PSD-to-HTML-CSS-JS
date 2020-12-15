@@ -1,0 +1,106 @@
+.banner{
+    padding-top: 197px;
+    background-image: url(../img/background.png);
+    background-position: center;
+    background-size: cover;
+    &__content{
+        @include flexColCenter;
+        text-align: center;
+        &-title{
+            font-family: $fontKau;
+            @include fontStyle(52px,$white,normal);
+        }
+        &-subTitle{
+            font-family: $fontMont;
+            @include fontStyle(100px,$white,normal);
+            max-width: 600px;
+            text-transform: uppercase;
+        }
+        &-line{
+            background-color:$white;
+            height: 3px;
+            margin-top: 30px;
+            width: 64px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &-btn{
+            margin-top: 40px;
+            button{
+                background-color: transparent;
+                border: 3px solid $white;
+                outline: none;
+                padding: 15px 40px;
+                text-transform: uppercase;
+                font-family: $fontMont;
+                font-weight: bold;
+                @include fontStyle(14px,$white,normal);
+                transition: all ease-in-out 0.2s;
+                &:hover{
+                    background-color: $white;
+                    color: $black;
+                    border: 3px solid $black;
+                }
+                &:focus{
+                    outline: none;
+                    box-shadow: 0 0 0 0.2rem rgba(66, 66, 66,0.4);
+                }
+            }
+        }
+        &-group{
+            margin-top: 135px;
+            display: grid;
+            grid-template-columns: repeat(4,200px);
+            column-gap: 25px;
+            margin-bottom: 25px;
+        }
+        &-detailLine{
+            background-color: $white;
+            width: 100%;
+            margin-bottom: 15px;
+            height: 3px;
+        }
+        &-detailText{
+            display: flex;
+            align-items: center;
+            h3{
+                font-family: $fontMont;
+                @include fontStyle(18px,$white,normal);
+            }
+            span{
+                margin-left: 8px;
+                @include fontStyle(14px,$white,normal);
+                font-family: $fontMont;
+                text-transform: uppercase;
+            }
+        }
+    }
+    @include max-breakpoint(891){
+        &__content{
+            &-group{
+                grid-template-columns: repeat(2,200px);
+                row-gap: 20px;
+            }
+            &-title{
+                font-size: 50px;
+            }
+            &-subTitle{
+                font-size: 70px;
+            }
+        }
+    }
+    @include max-breakpoint(469){
+        &__content{
+            &-group{
+                grid-template-columns: repeat(2,1fr);
+                row-gap: 20px;
+            }
+            &-title{
+                font-size: 30px;
+            }
+            &-subTitle{
+                font-size: 45px;
+            }
+        }
+    }
+}

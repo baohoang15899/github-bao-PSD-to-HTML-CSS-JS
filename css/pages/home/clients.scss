@@ -1,0 +1,58 @@
+.clients{
+    @extend .devices;
+    &__content{
+        padding-top: 80px;
+        padding-bottom: 80px;
+        @extend .devices__content;
+        &-title{
+            @extend .devices__content-title;
+        }
+        &-subTitle{
+            @extend .devices__content-subTitle;
+        }
+        &-linee{
+            @extend .devices__content-line;
+        }
+        &-avatar{
+            margin-right: 20px;
+            img{
+                width: 80px;
+            }
+        }
+        &-group{
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 90px;
+            row-gap: 67px;
+            @include max-breakpoint(993){
+                column-gap: initial;
+                grid-template-columns: 1fr;
+            }
+        }
+        &-detail{
+            display: flex;
+            text-align: left;
+        }
+        &-name{
+            @include fontStyle(14px,$black,normal);
+            font-family: $fontMont;
+            text-transform: uppercase;
+        }
+        &-role{
+            @include fontStyle(14px,#646464,italic);
+            font-family: $fontMont;
+        }
+        &-description{
+            @include fontStyle(14px,#646464,normal);
+            font-family: $fontMont;
+        }
+        &-line{
+            background-color:$red;
+            height: 3px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            width: 64px;
+        }
+    }
+}

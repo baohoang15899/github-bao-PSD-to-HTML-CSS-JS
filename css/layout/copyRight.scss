@@ -1,0 +1,12 @@
+.copyright{
+    border-top: 1px solid $light;
+    &__content{
+        padding-top: 20px;
+        padding-bottom: 20px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        @include fontStyle(12px,$black,normal);
+        font-family: $fontMont;
+    }
+}

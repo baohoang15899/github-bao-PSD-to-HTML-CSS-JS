@@ -1,0 +1,108 @@
+.slide{
+    position: relative;
+    background-color: #f8f8f8;
+    &__content{
+        padding-top: 30px;
+        padding-bottom: 30px;
+        &-next{
+            cursor: pointer;
+            font-size: 18px;
+            position: absolute;
+            right: 10%;
+            top: 50%;
+            transform: translateX(-50%);
+        }
+        &-back{
+            cursor: pointer;
+            font-size: 18px;
+            position: absolute;
+            left: 10%;
+            top: 50%;
+            transform: translateX(-50%);
+        }
+        &-group{
+            max-width: 786px;
+            margin: auto;
+            justify-content: center;
+            align-items: center;
+            .fa-comment-alt{
+                margin-right: 20px;
+                padding: 20px;
+                border: 2px solid $green;
+                @include fontStyle(50px,$green,normal);
+            }
+            display: none;
+            animation-name: show;
+            animation-duration: 0.5s;
+            @keyframes show {
+                from{opacity: 0.4;}
+                to{opacity: 1; }
+            }
+            &.show{
+                display: block;
+            }
+        }
+        &-text{
+            font-family: $fontMont;
+            @include fontStyle(14px,$grey,italic);
+        }
+        &-author{
+            display: flex;
+            margin-top: 5px;
+            align-items: center;
+            .line{
+                background-color:$red;
+                height: 3px;
+                width: 44px;
+                margin-right: 10px;
+            }
+            h3{
+                font-family: $fontKau;
+                @include fontStyle(16px,$black,normal);
+            }
+        }
+    }
+    @include max-breakpoint(1000){
+        &__content{
+            &-group{
+                max-width: 500px;
+                .fa-comment-alt{
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+    @include max-breakpoint(686){
+        &__content{
+            &-group{
+                max-width: 300px;
+                .fa-comment-alt{
+                    font-size: 20px;
+                }
+            }
+            &-text{
+                font-family: $fontMont;
+                @include fontStyle(10px,$grey,italic);
+            }
+        }
+    }
+    @include max-breakpoint(441){
+        &__content{
+            &-group{
+                max-width: 65vw;
+                .fa-comment-alt{
+                    font-size: 20px;
+                }
+            }
+            &-text{
+                font-family: $fontMont;
+                @include fontStyle(10px,$grey,italic);
+            }
+            &-author{
+                h3{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

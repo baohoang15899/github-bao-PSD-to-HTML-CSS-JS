@@ -1,0 +1,142 @@
+.footer{
+    &__content{
+        padding-top: 64px;
+        padding-bottom: 64px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        column-gap: 40px;
+        &-contact{
+            .number{
+                font-weight: bold;
+                font-family: $fontMont;
+            }
+            .line{
+                width: 100%;
+                margin-top: 20px;
+                margin-bottom: 20px;
+                height: 1px;
+                background-color: $light;  
+            }
+            .followers{
+                font-family: $fontMont;
+                color: $black;
+                font-size: 14px;
+            }
+            .logo{
+                font-weight: bold;
+                font-family: $fontMont;
+                @include fontStyle(36px,$grey,normal);
+            }
+            .description{
+                @include fontStyle(14px,$grey,normal);
+                margin-top: 25px;
+                margin-bottom: 35px;
+                font-family: $fontMont;
+            }
+            .social{
+                margin-bottom: 20px;
+                span{
+                    @include fontStyle(16px,$grey,italic);
+                    font-family: $fontMont;
+                }
+                display: flex;
+                align-items: center;
+                .img{
+                    display: flex;
+                    .icon{
+                        color: $green;
+                        margin-left: 15px;
+                    }
+                }
+            }
+            .button{
+                display: flex;
+                @include max-breakpoint(319){
+                    flex-wrap: wrap;
+                }
+                input{
+                    border: 1px solid $light;
+                    padding: 9px;
+                    &::placeholder{
+                        color: $grey;
+                        font-style: italic;
+                    }
+                }
+                button{
+                    background-color: $green;
+                    border: none;
+                    outline: none;
+                    color: $white;
+                    text-transform: uppercase;
+                    font-family: $fontMont;
+                    padding: 8px 30px;
+                    @include max-breakpoint(400){
+                        padding: 8px 15px;
+                    }
+                }
+            }
+        }
+        &-galleries{
+            .title{
+                margin-top: 10px;
+                text-transform: uppercase;
+                @include fontStyle(14px,$black,normal);
+                font-family: $fontMont;
+            }
+            .group{
+                display: grid;
+                row-gap: 5px;
+                column-gap: 5px;
+                margin-top: 25px;
+                grid-template-columns: repeat(3,1fr);
+               @include max-breakpoint(1255){
+                   grid-template-columns: 90px 90px 90px;
+               }
+               @include max-breakpoint(320){
+                grid-template-columns: repeat(3,1fr);
+            }
+            }
+            p{
+                @include fontStyle(12px,$grey,italic);
+                margin-top: 10px;
+            }
+        }
+        &-blog{
+            .title{
+                margin-top: 10px;
+                text-transform: uppercase;
+                @include fontStyle(14px,$black,normal);
+                font-family: $fontMont;
+            }
+        }
+        &-group{
+            .detail{
+                margin-top: 25px;
+                align-items: center;
+                display: flex;
+                &__img{
+                    margin-right: 15px;
+                }
+                &__text{
+                    p{
+                        font-weight: bold;
+                        font-family: $fontMont;
+                        font-size: 14px;
+                        margin-bottom: 8px;
+                        @include max-breakpoint(319){
+                            font-size: 12px;
+                        }
+                    }
+                    span{
+                        @include fontStyle(14px,$grey,italic);
+                    }
+                }
+            }
+        }
+        @include max-breakpoint(1255){
+            grid-template-columns: 1fr;
+            column-gap: initial;
+            row-gap: 50px;
+        }
+    }
+}

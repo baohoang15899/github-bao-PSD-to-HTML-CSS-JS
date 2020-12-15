@@ -1,0 +1,62 @@
+.team{
+    &__content{
+        @extend .story__content;
+        &-title{
+            @extend .story__content-title;
+        }
+        &-subTitle{
+            @extend .story__content-subTitle;
+        }
+        &-line{
+            @extend .story__content-line;
+        }
+        &-description{
+            @extend .story__content-description;
+        }
+        &-group{
+            @extend .story__content-group;
+        }
+        &-groupDetail{
+            @extend .story__content-groupDetail;
+            .icon{
+                width: 40px;
+                height: 40px;
+                @include fontStyle(20px,$red,normal);
+                padding: 10px;
+                transition: all ease-in-out 0.2s;
+                cursor: pointer;
+                background-color: #fce38a;
+                &:hover{
+                    background-color: $red;
+                    color: $white;
+                }
+            }
+        }
+        &-img{
+            @extend .story__content-img;
+        }
+        &-imgText{
+            @extend .story__content-imgText;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &-person{
+            margin-top: 20px;
+            @include flexColCenter;
+            text-align: center;
+        }
+        &-member{
+            font-family: $fontMont;
+            text-transform: uppercase;
+            font-weight: 600;
+            @include fontStyle(14px,$black,normal);
+        }
+        &-role{
+            margin-top: 7px;
+            font-family: $fontMont;
+            font-weight: 400;
+            @include fontStyle(14px,$grey,italic);
+        }
+    }
+}
