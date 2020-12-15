@@ -129,7 +129,7 @@ let main = {
                 modalWrap.classList.add('show')
             })
         })
-        window.addEventListener('click',(e)=>{
+        modalWrap.addEventListener('click',(e)=>{
             let clicked = e.target
             if (clicked === modalWrap) {
                 modalWrap.classList.remove('show')
